@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h1>CADASTRO</h1>
+
+        <!--FORMULÁRIO CADASTRO-->
+        <form id="formCad">
+            <label for="nomeComp">NOME COMPLETO:</label>
+            <input type="text" id="nomeComp" name="nomeComp" required>
+
+            <label for="emailCad">E-MAIL:</label>
+            <input type="email" id="emailCad" name="emailCad" required>
+
+            <label for="tell">CELULAR:</label>
+            <input type="tel" id="tell" name="tell" required>
+
+            <label for="senha">SENHA:</label>
+            <input type="password" id="senha" name="senha" mainlegth="8" required>
+            
+            <label for="confirme">CONFIRMAR SENHA:</label>
+            <input type="password" id="confirme" name="confirme" mainlegth="8" required>
+
+
+            <p id="mensagem">MENSAGEM DA TAG P</p>
+
+            <button type="submit">CRIAR CONTA</button>
+
+        </form>
+
+        <a href="#">JÁ POSSUI UMA CONTA? FAÇA LOGIN</a>
+    </div>
+
+    <script>
+        // VARIAVEIS
+
+        let formulario = document.getElementById("formCad");
+        let senha = document.getElementById("senha");
+        let confirmSe = document.getElementById("confirme");
+        let recado = document.getElementById("mensagem");
+
+        //ENVIO DO FORMULÁRIO
+        formulario.addEventListener("submit", function(event) {
+            
+        //IMPEDE O ENVIO AUTOMÁTICO DO FORMULÁRIO
+        event.preventDefault();
+
+        //COMPARANDO AS DUAS SENHAS
+
+        if(senha.value !== confirmSe.value){
+            recado.textContent = "Senhas Incompativeis";
+
+            confirmSe.focus();
+        }
+        else{
+            recado.textContent = "Cadastro feito com Sucesso";
+            alert("Senha iguais! Cadastr Feito Com Sucesso!!");
+
+        }
+
+
+        });
+
+    </script>
+    
+    <a href="http://127.0.0.1:5500/index.html">CONFIRMAR, ESSA TEGA VAI LEVAR DE VOLTA A TELA DE LIGN PRA CONFIRMAR</a>
+
+</body>
+</html>
